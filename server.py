@@ -11,7 +11,7 @@ import time
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={
+# CORS(app, resources={
     r"/*": {
         "origins": [
             "https://videosumai.netlify.app"
@@ -21,6 +21,8 @@ CORS(app, resources={
         "allow_headers": ["Content-Type"]
     }
 })
+
+CORS(app)
 
 # Configure logging
 logging.basicConfig(
