@@ -11,7 +11,8 @@ import time
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app)
+
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Configure logging
 logging.basicConfig(
@@ -110,9 +111,8 @@ def favicon():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('ENVIRONMENT') != 'production'
+    # debug = os.environ.get('ENVIRONMENT') != 'production'
     app.run(
         host='0.0.0.0',
-        port=port,
-        debug=debug
+        port=port
     )
