@@ -15,7 +15,7 @@ CORS(app, resources={
     r"/*": {
         "origins": [
             "https://videosumai.netlify.app"
-            # "http://localhost:3000"  # Include this if you need local development
+            "http://localhost:8888"  # Include this if you need local development
         ],
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type"]
